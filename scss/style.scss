@@ -1,0 +1,125 @@
+
+@import "./utilities/_reset";
+
+/* ------------------------------------
+*  Variables
+* ------------------------------------ */
+
+$f-main: "Karos Sans Variable";
+$f-sub: 'Montserrat', sans-serif;
+$clm-main: 1440px;
+$c-orange: rgba(255, 81, 0, 0.925);
+$c-blue: rgba(4, 0, 255, 0.87);
+
+/* ------------------------------------
+*  Base Settings
+* ------------------------------------ */
+
+@font-face {
+  /* Karos Sans Variable */
+  font-family: $f-main;
+	src: url('/dist/assets/fonts/KairosSans_Variable.woff2') format('truetype-variations');
+  font-weight: 250 999;
+  font-stretch: 75 125;
+  // font-style: italic;
+}
+
+html, body {
+	font-family: $f-sub, "Adobe Blank";
+	overflow: hidden;
+}
+
+/* ------------------------------------
+*  Main
+* ------------------------------------ */
+
+$visual-max-width: 100vw;
+$visual-max-height: 100vh;
+$visual-expand-width: 999vw;
+$visual-expand-height: 999vh;
+$visual-font-size: 8vw;
+
+.visual {
+	width: $visual-max-width;
+		height: $visual-max-height;
+		max-width: $visual-max-width;
+		max-height: $visual-max-height;
+	position: relative;
+	margin: 0 auto;
+
+	& .visual__texts {
+		overflow: hidden;
+	}
+
+	& .visual__carousel {
+		display: flex;
+		overflow: hidden;
+	}
+
+	& .visual__text {
+		font-size: $visual-font-size;
+		font-weight: 900;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		&:nth-child(even) .main {
+			text-decoration: underline;
+		}
+	}
+}
+
+.visual .visual__block {
+	position: absolute;
+
+	&.-top { top: 0; left: 0; }
+	&.-right { bottom: 0; right: $visual-font-size; }
+	&.-bottom { bottom: $visual-font-size; left: $visual-max-width; }
+	&.-left { top: $visual-max-height; left: 0; }
+
+	&.-left {
+		transform-origin: top left;
+		transform: rotate(-90deg);
+
+		& .visual__texts { max-width: calc(#{$visual-max-height} - 15vh); }
+	}
+	&.-right {
+		transform-origin: bottom right;
+		transform: rotate(90deg);
+		text-align: end;
+
+		& .visual__texts { max-width: calc(#{$visual-expand-height} - 15vh); }
+		& .visual__texts-container {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	&.-left, &.-right {
+		width: $visual-expand-height;
+
+		& .visual__texts-container { width: $visual-expand-height; }
+		& .visual__carousel { max-width: 100vh; }
+	}
+
+	&.-bottom {
+		transform-origin: bottom left;
+		transform: rotate(-180deg);
+	}
+	&.-top, &.-bottom {
+		width: $visual-expand-width;
+
+		& .visual__texts { max-width: 90vw; }
+		& .visual__texts-container { width: $visual-expand-width; }
+		& .visual__carousel { max-width: 100vw; }
+	}
+}
+
+.visual__text {
+	transform: translate3d(0, 0, 0);
+	animation: moveTexts 10s linear infinite;
+}
+
+@keyframes moveTexts {
+  100% {
+    transform: translateX(-200%);
+  }
+}
