@@ -60450,7 +60450,7 @@ function drawKeypoints(keypoints, minConfidence, ctx, randomColor, scale = 1) {
       y,
       x
     } = keypoint.position;
-    drawPoint(ctx, y * scale, x * scale, 160, randomColor);
+    drawPoint(ctx, y * scale, x * scale, 350, randomColor);
   }
 }
 /**
@@ -62095,14 +62095,13 @@ function setupFPS() {
 }
 
 function getRandomColor() {
-  let letters = '0123456789ABCDEF';
-  let color = '#';
-
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-
-  return color;
+  // let letters = '0123456789ABCDEF';
+  // let color = '#';
+  // for (let i = 0; i < 6; i++) {
+  //   color += letters[Math.floor(Math.random() * 16)];
+  // }
+  // return color;
+  return "hsla(".concat(~~(360 * Math.random()), ",70%,70%,1)");
 }
 /**
  * Feeds an image to posenet to estimate poses - this is where the magic
