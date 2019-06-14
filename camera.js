@@ -202,7 +202,7 @@ function getRandomColor() {
   //   color += letters[Math.floor(Math.random() * 16)];
   // }
   // return color;
-  return `hsla(${~~(360 * Math.random())},70%,70%,1)`;
+  return `hsla(${~~(360 * Math.random())},60%,60%,1)`;
 }
 
 /**
