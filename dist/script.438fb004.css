@@ -1,0 +1,200 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+a:focus {
+  outline: none; }
+
+/*form reset*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  text-align: left;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box; }
+
+button,
+textarea,
+input,
+select {
+  outline: 0; }
+
+select {
+  appearance: none; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset; }
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer; }
+
+a {
+  text-decoration: none; }
+
+.dg {
+  display: none; }
+
+/* ------------------------------------
+*  Variables
+* ------------------------------------ */
+/* ------------------------------------
+*  Base Settings
+* ------------------------------------ */
+html, body {
+  font-family: "Montserrat", sans-serif, "Adobe Blank";
+  overflow: hidden; }
+
+/* ------------------------------------
+*  Main
+* ------------------------------------ */
+.visual {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  position: relative;
+  margin: 0 auto; }
+  .visual .visual__texts {
+    overflow: hidden; }
+  .visual .visual__carousel {
+    display: flex;
+    overflow: hidden; }
+  .visual .visual__text {
+    font-size: 8vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap; }
+    .visual .visual__text:nth-child(even) .main {
+      text-decoration: underline; }
+
+.visual .visual__block {
+  position: absolute; }
+  .visual .visual__block.-top {
+    top: 0;
+    left: 0; }
+  .visual .visual__block.-right {
+    bottom: 0;
+    right: 8vw; }
+  .visual .visual__block.-bottom {
+    bottom: 8vw;
+    left: 100vw; }
+  .visual .visual__block.-left {
+    top: 100vh;
+    left: 0; }
+  .visual .visual__block.-left {
+    transform-origin: top left;
+    transform: rotate(-90deg); }
+    .visual .visual__block.-left .visual__texts {
+      max-width: calc(100vh - 15vh); }
+  .visual .visual__block.-right {
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+    text-align: end; }
+    .visual .visual__block.-right .visual__texts {
+      max-width: calc(999vh - 15vh); }
+    .visual .visual__block.-right .visual__texts-container {
+      display: flex;
+      justify-content: flex-end; }
+  .visual .visual__block.-left, .visual .visual__block.-right {
+    width: 999vh; }
+    .visual .visual__block.-left .visual__texts-container, .visual .visual__block.-right .visual__texts-container {
+      width: 999vh; }
+    .visual .visual__block.-left .visual__carousel, .visual .visual__block.-right .visual__carousel {
+      max-width: 100vh; }
+  .visual .visual__block.-bottom {
+    transform-origin: bottom left;
+    transform: rotate(-180deg); }
+  .visual .visual__block.-top, .visual .visual__block.-bottom {
+    width: 999vw; }
+    .visual .visual__block.-top .visual__texts, .visual .visual__block.-bottom .visual__texts {
+      max-width: 90vw; }
+    .visual .visual__block.-top .visual__texts-container, .visual .visual__block.-bottom .visual__texts-container {
+      width: 999vw; }
+    .visual .visual__block.-top .visual__carousel, .visual .visual__block.-bottom .visual__carousel {
+      max-width: 100vw; }
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh; }
+  .title h1 {
+    font-size: 3vw; }
+  .title h2 {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    text-decoration: underline; }
+
+/* ------------------------------------
+*  Animation
+* ------------------------------------ */
+.visual__text {
+  transform: translate3d(0, 0, 0);
+  animation: moveTexts 10s linear infinite; }
+
+@keyframes moveTexts {
+  100% {
+    transform: translateX(-200%); } }
+
+/* ------------------------------------
+*  Background
+* ------------------------------------ */
+.main {
+  position: relative; }
+  .main .visual {
+    position: relative;
+    z-index: 999; }
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+
+#output {
+  min-width: 100vw; }
