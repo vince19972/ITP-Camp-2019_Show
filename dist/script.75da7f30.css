@@ -73,19 +73,15 @@ input[type="submit"] {
 a {
   text-decoration: none; }
 
+.dg {
+  display: none; }
+
 /* ------------------------------------
 *  Variables
 * ------------------------------------ */
 /* ------------------------------------
 *  Base Settings
 * ------------------------------------ */
-@font-face {
-  /* Karos Sans Variable */
-  font-family: "Karos Sans Variable";
-  src: url("/KairosSans_Variable.efb69322.woff2") format("truetype-variations");
-  font-weight: 250 999;
-  font-stretch: 75 125; }
-
 html, body {
   font-family: "Montserrat", sans-serif, "Adobe Blank";
   overflow: hidden; }
@@ -159,6 +155,23 @@ html, body {
     .visual .visual__block.-top .visual__carousel, .visual .visual__block.-bottom .visual__carousel {
       max-width: 100vw; }
 
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh; }
+  .title h1 {
+    font-size: 3vw; }
+  .title h2 {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    text-decoration: underline; }
+
+/* ------------------------------------
+*  Animation
+* ------------------------------------ */
 .visual__text {
   transform: translate3d(0, 0, 0);
   animation: moveTexts 10s linear infinite; }
@@ -167,5 +180,21 @@ html, body {
   100% {
     transform: translateX(-200%); } }
 
+/* ------------------------------------
+*  Background
+* ------------------------------------ */
+.main {
+  position: relative; }
+  .main .visual {
+    position: relative;
+    z-index: 999; }
 
-/*# sourceMappingURL=/script.75da7f30.css.map */
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+
+#output {
+  min-width: 100vw; }

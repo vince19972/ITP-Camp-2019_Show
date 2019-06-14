@@ -1,5 +1,6 @@
 
 @import "./utilities/_reset";
+@import "./utilities/_override";
 
 /* ------------------------------------
 *  Variables
@@ -15,14 +16,14 @@ $c-blue: rgba(4, 0, 255, 0.87);
 *  Base Settings
 * ------------------------------------ */
 
-@font-face {
-  /* Karos Sans Variable */
-  font-family: $f-main;
-	src: url('/dist/assets/fonts/KairosSans_Variable.woff2') format('truetype-variations');
-  font-weight: 250 999;
-  font-stretch: 75 125;
-  // font-style: italic;
-}
+// @font-face {
+//   /* Karos Sans Variable */
+//   font-family: $f-main;
+// 	src: url('/dist/assets/fonts/KairosSans_Variable.woff2') format('truetype-variations');
+//   font-weight: 250 999;
+//   font-stretch: 75 125;
+//   // font-style: italic;
+// }
 
 html, body {
 	font-family: $f-sub, "Adobe Blank";
@@ -113,6 +114,28 @@ $visual-font-size: 8vw;
 	}
 }
 
+.title {
+	display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	width: 100vw;
+	height: 100vh;
+
+	& h1 {
+		font-size: 3vw;
+	}
+	& h2 {
+		font-size: 1.5vw;
+		margin-bottom: 1vw;
+		text-decoration: underline;
+	}
+}
+
+/* ------------------------------------
+*  Animation
+* ------------------------------------ */
+
 .visual__text {
 	transform: translate3d(0, 0, 0);
 	animation: moveTexts 10s linear infinite;
@@ -122,4 +145,30 @@ $visual-font-size: 8vw;
   100% {
     transform: translateX(-200%);
   }
+}
+
+
+/* ------------------------------------
+*  Background
+* ------------------------------------ */
+
+.main {
+	position: relative;
+
+	& .visual {
+		position: relative;
+		z-index: 999;
+	}
+}
+
+#background {
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100vw;
+		height: 100vh;
+}
+
+#output {
+	min-width: 100vw;
 }
