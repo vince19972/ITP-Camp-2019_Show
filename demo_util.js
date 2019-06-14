@@ -70,7 +70,7 @@ export function drawKeypoints(keypoints, minConfidence, ctx, randomColor, scale 
     }
 
     const {y, x} = keypoint.position;
-    drawPoint(ctx, y * scale, x * scale, 350, randomColor);
+    drawPoint(ctx, y * scale, x * scale, 250, randomColor);
   }
 }
 
