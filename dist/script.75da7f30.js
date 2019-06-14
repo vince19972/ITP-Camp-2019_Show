@@ -61933,8 +61933,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * limitations under the License.
  * =============================================================================
  */
-const videoWidth = 600;
-const videoHeight = 500;
+const videoWidth = window.innerWidth;
+const videoHeight = window.innerHeight;
 const stats = new _stats.default();
 
 function isAndroid() {

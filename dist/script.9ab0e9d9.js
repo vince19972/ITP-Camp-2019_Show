@@ -62237,4 +62237,4 @@ require("./scss/style.scss");
 
 require("./camera.js");
 },{"./scss/style.scss":"Gg4U","./camera.js":"1SbO"}]},{},["mpVp"], null)
-//# sourceMappingURL=script.27b1f596.map
+//# sourceMappingURL=docs/script.27b1f596.map

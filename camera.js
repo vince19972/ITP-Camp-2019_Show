@@ -21,8 +21,8 @@ import Stats from 'stats.js';
 import {drawBoundingBox, drawKeypoints, drawSkeleton} from './demo_util';
 import { CompositeDisposable } from 'rx-core';
 
-const videoWidth = 600;
-const videoHeight = 500;
+const videoWidth = window.innerWidth;
+const videoHeight = window.innerHeight;
 const stats = new Stats();
 
 function isAndroid() {
